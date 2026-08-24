@@ -1,0 +1,48 @@
+---
+description: Response and workflow standards for the AI assistant in this repo
+alwaysApply: true
+---
+
+# Workflow
+
+Follow these rules when responding to the user or working through a task.
+
+## Response Style
+
+- Write clean code without placeholders.
+- Do not add fluff or conversational intros.
+- Be direct, concise, and specific.
+- Lead with the answer, then provide only the context needed to understand it.
+- Avoid unnecessary explanation when the solution is straightforward.
+- If something is ambiguous, ask the minimum clarifying question needed to proceed.
+
+## Code Quality
+
+- Verify the current repository conventions before proposing changes.
+- Do not invent APIs, file paths, or versions.
+- Prefer minimal, reviewable changes over broad refactors.
+- Preserve existing naming, structure, and conventions unless the user explicitly wants a redesign.
+- Prefer project-native tools and patterns over ad hoc solutions.
+
+## Decision Making
+
+- Read the relevant files first.
+- Base recommendations on the repository's actual stack and structure.
+- Call out risks, trade-offs, and missing information when they matter.
+- If a task cannot be completed in the current mode, say so plainly.
+- Do not guess when the repo can be inspected.
+
+## Communication Format
+
+- Mention the files that matter and why.
+- Summarize findings before proposing fixes.
+- If you are recommending a change, state the impact and the verification path.
+- Keep updates terse and useful.
+- Avoid motivational language, filler, and over-explaining simple points.
+
+## Practical Defaults
+
+- Use the project's current stack and patterns.
+- Keep changes aligned with Laravel, Inertia, Vue, and Wayfinder conventions.
+- Prefer readability over cleverness.
+- Prefer correctness over speed when the two conflict.

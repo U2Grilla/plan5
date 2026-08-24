@@ -1,0 +1,56 @@
+---
+description: Vue layout and component conventions for the Inertia UI
+globs: resources/js/**/*.vue
+alwaysApply: false
+---
+
+# UI Components
+
+Follow these rules for every Vue component and layout in this project.
+
+## Layout Principles
+
+- Use a single root element in every Vue SFC.
+- Keep page components thin. Put app chrome, navigation, and shell structure in layouts, not in pages.
+- Reuse the existing app shell pattern in `resources/js/layouts`, especially `AppLayout.vue`, instead of creating ad hoc wrappers.
+- Build reusable UI in `resources/js/components` and keep page-specific markup inside `resources/js/pages`.
+- Do not duplicate sidebars, headers, footers, or page containers across pages.
+
+## Vue Conventions
+
+- Use `<script setup lang="ts">` for new components unless there is a strong reason not to.
+- Keep component props explicit and typed.
+- Prefer small, focused components over large page files with deeply nested markup.
+- Use semantic HTML elements such as `header`, `nav`, `main`, `aside`, and `footer` when building layout structure.
+- Keep slot usage simple and predictable.
+
+## Styling Rules
+
+- Prefer Tailwind utility classes first.
+- Keep global design tokens and base typography in `resources/css/app.css`.
+- Avoid inline styles unless there is no practical Tailwind alternative.
+- Use local `<style>` blocks only when the styling is truly component-specific and cannot be expressed cleanly with utilities.
+- Keep responsive behavior mobile-first and add breakpoints intentionally.
+- Avoid layout hacks that depend on brittle absolute positioning, high z-index values, or duplicated spacing rules.
+
+## Navigation and Routing
+
+- Use Inertia `Link` components for navigation.
+- Use Wayfinder-generated helpers for route URLs and form actions.
+- Do not hardcode URLs when a named route or generated helper exists.
+- Keep links, buttons, and navigation items visually consistent across the app.
+
+## Inertia and Page Structure
+
+- Inertia pages should live in `resources/js/pages` and render through `Inertia::render()` on the backend.
+- Layouts should own the shell; pages should own content.
+- If a page needs a wrapper, prefer composition over copying shell markup.
+- Keep loading, empty, and error states inside the page or component that owns the state.
+- Do not mix server-side controller concerns into view components.
+
+## Quality Bar
+
+- Keep markup readable and easy to scan.
+- Prefer explicit structure over clever abstractions.
+- Match the existing design language in the repo before introducing new patterns.
+- Do not add placeholder UI, lorem ipsum, or fake interactions.

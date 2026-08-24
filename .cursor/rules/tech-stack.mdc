@@ -1,0 +1,49 @@
+---
+description: Core stack and repository map for this Laravel + Vue application
+alwaysApply: true
+---
+
+# Tech Stack
+
+This project uses:
+
+- PHP 8.3
+- Laravel 13.23.0
+- Inertia.js v3 with `inertiajs/inertia-laravel`
+- Vue 3.5 with `@inertiajs/vue3`
+- Vite
+- Tailwind CSS v4
+- Wayfinder for typed route and action generation
+- Pest for testing
+- Larastan for static analysis
+- Pint for formatting
+
+## Repository Map
+
+Use these directories to understand the system before changing code:
+
+- `app/Http/Controllers` for server-side request handling and Inertia responses.
+- `app/Http/Middleware/HandleInertiaRequests.php` for shared Inertia props and root view behavior.
+- `config/inertia.php` for page discovery and SSR configuration.
+- `routes/web.php` and `routes/console.php` for application routing.
+- `resources/views/app.blade.php` for the root HTML shell and Vite entry point.
+- `resources/css/app.css` for global theme tokens, Tailwind v4 setup, and base typography.
+- `resources/js/pages` for Inertia page components.
+- `resources/js/layouts` for application shells and page chrome.
+- `resources/js/components` for reusable UI components.
+- `resources/js/actions` for Wayfinder-generated controller and action types.
+- `resources/js/routes` for Wayfinder-generated route helpers.
+- `resources/js/types` for shared TypeScript types and shims.
+- `resources/js/lib` for small shared utilities.
+- `database/migrations` for the database structure. Read this directory when you need to understand the database schema.
+- `database/factories` for model factories used in tests and seed data.
+- `database/seeders` for seeders and deterministic fixture data.
+- `tests` for Pest feature and unit tests.
+- `storage` for runtime files, cached views, and generated artifacts.
+
+## Working Rules
+
+- Prefer named routes and generated Wayfinder helpers over hardcoded URLs.
+- Treat generated route and action files as generated output unless there is a deliberate regeneration step.
+- Read the relevant directory before making assumptions about conventions, naming, or structure.
+- Keep the stack in sync with the lockfile, not just the version constraints in `composer.json` or `package.json`.
